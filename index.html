@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <!-- Defining character encoding and meta attributes -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Adding link to the general CSS file -->
+        <link rel="stylesheet" href="styles/general.css">
+        
+        <!-- Page title -->
+        <title> Weather App </title> 
+    </head>
+    <body>
+      <!-- Container for the weather application -->
+      <div class="weather-app">
+        <!-- Container for the application content -->
+        <div class="container">
+            <!-- Application title -->
+            <h3 class="brand">
+                 Weather App
+            </h3>
+            <div>
+                <!-- Displaying the current temperature -->
+                <h1 class="temp">16&#176;</h1>
+                <!-- Container for current city and time -->
+                <div class="city-time">
+                    <!-- Displaying the city name -->
+                    <h1 class="name">Bucharest</h1>
+                    <!-- Displaying current time and date -->
+                    <small>
+                        <span class="time">12:09</span>
+                        -
+                        <span class="date">
+                            Monday Jan 9
+                        </span>
+                    </small>
+                </div>
+                <!-- Container for current weather condition -->
+                <div class="weather">
+                    <!-- Displaying icon for current weather condition -->
+                    <img src="/icons/day/179.png" class="icon" alt="icon" width="50" height="50">
+                    <!-- Displaying current weather condition -->
+                    <span class="condition">Cloudy</span>
+                </div>
+            </div>
+        </div>
+        <!-- Container for the search panel -->
+        <div class="panel">
+            <!-- Form for entering location -->
+            <form id="locationInput" autocomplete="off" action="/action_page.php"> 
+                <div class="autocomplete" style="width:300px;">
+                    <!-- Input for location search -->
+                    <input type="text" class="search"  id="myInput" placeholder="Search Location...">
+                </div>
+                <!-- Button to submit search form -->
+                <button type="submit" class="submit">
+                    <!-- Icon image for search button -->
+                    <img src="/images/magnifying-glass.gif" class="icon" alt="icon" width="30" height="30">
+                </button>
+            </form>
+            <!-- List of saved cities -->
+            <ul class="cities">
+                <li class="city">Bucharest</li>
+                <li class="city">Cyprus</li>
+                <li class="city">Cluj-Napoca</li>
+                <li class="city">Tokyo</li>
+            </ul>
+            <!-- Weather details -->
+            <ul class="details">
+                <!-- Section title -->
+                <h4>Weather details</h4>
+                <!-- Displaying weather condition details -->
+                <li>
+                    <span>Cloudy</span>
+                    <span class="cloud">89%</span>
+                </li>
+                <!-- Displaying humidity details -->
+                <li>
+                    <span>Humidity</span>
+                    <span class="humidity">64%</span>
+                </li>
+                <!-- Displaying wind details -->
+                <li>
+                    <span>Wind</span>
+                    <span class="wind">8km/h</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Container for weather forecast -->
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weekly-forecast" class="weather-forecast-item">
+                <!-- Here you will display the forecast for a week -->
+            </div>
+        </div> 
+    </div>
+</div> 
+
+<!-- Including JavaScript scripts -->
+<script type="text/javascript" src="/scripts/main.js"></script>
+<script>
+    // Initializing autocomplete function for location search
+    autocomplete(document.getElementById("myInput"), countries);
+</script>
+</body>
+</html>

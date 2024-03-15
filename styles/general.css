@@ -1,0 +1,340 @@
+/* General styles for the entire document */
+
+/* Reset margins and set primary font */
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background: #111;
+}
+
+/* Use box-sizing: border-box to include margins and padding in total size */
+* {
+    box-sizing: border-box;
+}
+
+/* Styles for H1 and H3 headings */
+h1, h3 {
+    font-weight: 400;
+}
+
+/* Styles for the weather application container */
+.weather-app {
+    min-height: 100vh;
+    background-image: url(/images/day/cloudy.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+    position: relative;
+    transition: 500ms;
+    opacity: 1;
+}
+
+/* Pseudo-element to create a semi-transparent overlay effect */
+.weather-app::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* Styles for the main container */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1em 3em 4em 3em;
+}
+
+/* Styles for sub-containers within the main container */
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35%;
+}
+
+/* Styles for city, time, and weather condition */
+.city-time, .temp, .weather {
+    margin: 0 1em;
+}
+
+/* Styles for city title */
+.city-time h1 {
+    margin: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+
+/* Styles for temperature */
+.temp {
+    font-size: 7em;
+    margin: 0;
+}
+
+/* Styles for weather condition image */
+.weather img {
+    display: block;
+    margin: 0.5em 0;
+}
+
+/* Styles for the search panel */
+.panel {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(80px);
+    border: 1px solid rgb(255, 255, 255);
+    z-index: 1;
+    padding: 3em 2em;
+}
+
+/* Styles for the search form */
+.panel form {
+    margin-bottom: 3em;
+}
+
+/* Styles for the search button */
+.submit {
+    top: 0;   
+    right: 0;
+    padding: 1em;
+    margin: 1em;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Styles for the search input */
+.search {
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    padding: 0 1em 0.5em 0;
+    width: 80%;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+/* Styles for the search icon */
+.fa-search {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* Styles for the search input when focused */
+.search:focus {
+    outline: none;
+}
+
+/* Styles for the placeholder text in the search input */
+.search::placeholder {
+    color: #ccc;
+}
+
+/* Styles for city and details lists */
+.panel ul {
+    padding: 0;
+    margin: 2em 0;
+    border-bottom: 1px #ccc solid;
+}
+
+/* Styles for items in city and details lists */
+.panel ul li {
+    color: #ccc;
+    margin: 2.5em 0;
+}
+
+/* Styles for the title of details lists */
+.panel ul h4 {
+    margin: 3em 0;
+}
+
+/* Styles for items in city lists */
+.city {
+    display: block;
+    cursor: pointer;
+}
+
+/* Styles for hover effect on cities */
+.city:hover {
+    color: #fff;
+}
+
+/* Styles for items in details lists */
+.details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: initial;
+}
+
+/* Media queries */
+
+/* Media query for screens with a maximum width of 800px */
+@media screen and (max-width: 800px) {
+    .panel, .container {
+        position: relative;
+        width: 100%;
+        top: initial;
+    }
+}
+
+/* Media query for screens with a maximum width of 500px */
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/* Media query for screens with a maximum width of 300px */
+@media screen and (max-width: 300px) {
+    .weather-app {
+        min-height: 400em;
+    }
+}
+
+/* Styles for the autocomplete container */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styles for the input inside the autocomplete container */
+input {
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Styles for text input inside the autocomplete container */
+input[type=text] {
+    background-color: #000000;
+    width: 100%;
+}
+
+/* Styles for the submit button inside the autocomplete container */
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+}
+
+/* Styles for items inside the autocomplete container */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #3b3b3b;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Styles for each item in the autocomplete list */
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #000000;
+}
+
+/* Styles for the item in the autocomplete list when hovered */
+.autocomplete-items div:hover {
+    background-color: #5a4141;
+}
+
+/* Styles for the active item in the autocomplete list */
+.autocomplete-active {
+    background-color: rgb(59, 60, 61) !important;
+    color: #ffffff;
+}
+
+/* Styles for the weather forecast container */
+.weather-forecast {
+    background: rgba(24, 24, 27, 0.8); 
+    position: absolute;
+    top: 20em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 50em;
+    height: 22em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+    border-radius: 4%;
+}
+
+/* Styles for each item in the weather forecast */
+.weather-forecast-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.3);
+    background-position: center;
+    margin: 0.25em;
+    border: 0.1em solid #ccc;
+    border-radius: 4%;
+    padding: 1em;
+}
+
+/* Styles for days in the weather forecast */
+.day-for {
+    padding: 1em;
+}
+
+/* Styles for temperatures in the weather forecast */
+.temp-for {
+    padding-block: 1em;
+}
+
+/* Styles for grades in the weather forecast */
+.grade {
+    font-size: 2em;
+}
+
+/* Media query for screens with a maximum width of 730px */
+@media only screen and (max-width: 730px) {
+    .weather-forecast {
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+}
+
+/* Media query for screens with a maximum width of 730px */
+@media screen and (max-width: 730px) {
+    .weather-forecast {
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        top: initial;
+    }
+}
+
+/* Media query for screens with a maximum width of 730px */
+@media screen and (max-width: 730px) {
+    .weather-forecast-item {
+        position: relative;
+        width: 100%;
+        top: initial;
+    }
+}
